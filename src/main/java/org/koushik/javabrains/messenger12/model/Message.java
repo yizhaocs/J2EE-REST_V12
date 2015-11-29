@@ -7,7 +7,7 @@ import java.util.Map;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
-import org.koushik.javabrains.messenger13.model.Comment;
+import org.koushik.javabrains.messenger12.model.Comment;
 
 @XmlRootElement
 public class Message {
