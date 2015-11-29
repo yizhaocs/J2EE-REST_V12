@@ -21,16 +21,19 @@ import org.koushik.javabrains.messenger12.service.CommentService;
 public class CommentResource {
 	private CommentService commentService = new CommentService();
 
+	// http://localhost:8080/messenger12/webapi/messages/2/comments
 	@GET
 	public List<Comment> getAllComments(@PathParam("messageId") long messageId){
 		return commentService.getAllComments(messageId);
 	}
 
+	// http://localhost:8080/messenger12/webapi/messages/2/comments
 	@POST
 	public Comment addMessage(@PathParam("messageId") long messageId, Comment comment){
 		return commentService.addComment(messageId, comment);
 	}
 
+	// http://localhost:8080/messenger12/webapi/messages/2/comments/1
 	@PUT
 	@Path("/{commentId}")
 	public Comment updateMessage(@PathParam("messageId") long messageId, @PathParam("commentId") long id, Comment comment){
@@ -38,12 +41,14 @@ public class CommentResource {
 		return commentService.updateComment(messageId, comment);
 	}
 
+	// http://localhost:8080/messenger12/webapi/messages/2/comments/1
 	@DELETE
 	@Path("/{commentId}")
 	public void deleteComment(@PathParam("messageId") long messageId, @PathParam("commentId") long commentId){
 		commentService.removeComment(messageId, commentId);
 	}
 
+	// http://localhost:8080/messenger12/webapi/messages/2/comments/1
 	@GET
 	@Path("/{commentId}")
 	public Comment getMessage(@PathParam("messageId") long messageId, @PathParam("commentId") long commentId){
